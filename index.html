@@ -34,15 +34,17 @@ function myFacebookLogin() {
 }
 
 function testGraphAPI() {
+  console.log("Test graph API");
   // Note: The call will only work if you accept the permission request
-  FB.api(
-    "/1582939625155119/comments",
-    function (response) {
-      if (response && !response.error) {
-        $('.comments').html("Hi");
+    FB.api(
+      "/1582939625155119/comments",
+      function (response) {
+        console.log("Responsed");
+        if (response && !response.error) {
+          $('.comments').html("Hi");
+        }
       }
-    }
-);
+    );
 }
 
 </script>
