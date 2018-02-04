@@ -30,7 +30,23 @@
 function myFacebookLogin() {
   FB.login(function(){}, {scope: 'publish_actions'});
 }
+
+function testGraphAPI() {
+  // Note: The call will only work if you accept the permission request
+  FB.api(
+    "/1582939625155119/comments",
+    function (response) {
+      if (response && !response.error) {
+        $('.comments').html("Hi");
+      }
+    }
+);
+}
+
 </script>
 <button onclick="myFacebookLogin()">Login with Facebook</button>
+<button onclick="testGraphAPI()">Facebook Live Comment</button>
+
+<div class="comments"></div>
 </body>
 </html>
