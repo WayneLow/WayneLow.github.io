@@ -40,6 +40,7 @@ function testGraphAPI() {
       "/1582939625155119/comments",
       function (response) {
         console.log("Responsed");
+	console.log(response);
         if (response && !response.error) {
           $('.comments').html("Hi");
         }
